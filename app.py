@@ -18,7 +18,7 @@ def home():
 # ── Alerts endpoint for Dashboard ────────────────────────────
 @app.route('/alerts')
 def get_alerts():
-    df = pd.read_csv('next work/insider_threat_scenarios.csv')
+    df = pd.read_csv('data/insider_threat_scenarios.csv')
     df['response_time'] = df['response_time'].str.replace('_minutes', '').str.replace('_minute', '').astype(float)
     df['false_positive'] = df['false_positive'].map({'true': 1, 'false': 0})
 
@@ -63,7 +63,7 @@ def predict():
 # ── Users endpoint ────────────────────────────────────────────
 @app.route('/users')
 def get_users():
-    df = pd.read_csv('next work/insider_threat_scenarios.csv')
+    df = pd.read_csv('data/insider_threat_scenarios.csv')
     df['response_time'] = df['response_time'].str.replace('_minutes','').str.replace('_minute','').astype(float)
     df['false_positive'] = df['false_positive'].map({'true': 1, 'false': 0})
 
@@ -86,7 +86,7 @@ def get_users():
 # ── Timeline endpoint ─────────────────────────────────────────
 @app.route('/timeline')
 def get_timeline():
-    df = pd.read_csv('next work/insider_threat_scenarios.csv')
+    df = pd.read_csv('data/insider_threat_scenarios.csv')
     timeline = []
     for _, row in df.iterrows():
         timeline.append({
@@ -102,7 +102,7 @@ def get_timeline():
 # ── Reports endpoint ──────────────────────────────────────────
 @app.route('/report-summary')
 def get_report():
-    df = pd.read_csv('next work/insider_threat_scenarios.csv')
+    df = pd.read_csv('data/insider_threat_scenarios.csv')
     df['response_time'] = df['response_time'].str.replace('_minutes','').str.replace('_minute','').astype(float)
     df['false_positive'] = df['false_positive'].map({'true': 1, 'false': 0})
 
@@ -128,7 +128,7 @@ def get_report():
 # ── Behavior Analysis endpoint ────────────────────────────────
 @app.route('/behavior')
 def get_behavior():
-    df = pd.read_csv('next work/ueba_data.csv')
+    df = pd.read_csv('data/ueba_data.csv')
     df['anomaly'] = df['risk_score'].apply(lambda x: True if x > 0.7 else False)
 
     user_summary = []

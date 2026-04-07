@@ -46,5 +46,7 @@ Risk 0–39   → 🟢 LOW     Monitor and log
 |---|---|
 | Janhavi Naik | ML Model, Alert Prioritization, Data Analysis |
 | Aney Shravani | Frontend, Flask Backend |
+| Vedant Thakre | Data Preprocessing, Model Evaluation |
+| Bhagyalaxmi Soitkar | Dataset Collection, Testing & Documentation |
 
 > Final Year Project — B.Tech Computer Technology, YCCE Nagpur (2023–2027)
